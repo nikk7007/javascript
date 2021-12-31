@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox 1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 300;
+            color: var(--white);
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: var(--dark);
+        }
+
+        :root {
+            --dark: rgb(10, 25, 30);
+            --white: #F2ECFF;
+            --green: #00C896;
+        }
+
+        .cont {
+            display: flex;
+            align-items: center;
+            transform: scale(1);
+        }
+
+        input[type="checkbox"] {
+            height: 2rem;
+            width: 2rem;
+            margin: 5px;
+
+            display: inline-block;
+            appearance: none;
+            position: relative;
+
+            background-color: var(--white);
+            border-radius: 15%;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        input[type="checkbox"]::after {
+            content: '';
+            display: block;
+            height: 1.1rem;
+            width: .6rem;
+
+            border-bottom: .35rem solid var(--dark);
+            border-right: .35rem solid var(--dark);
+            opacity: 0;
+
+            transform: rotate(45deg) translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 20%;
+
+            transition: .25s ease;
+
+        }
+
+        input[type="checkbox"]::before {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+
+            background-color: var(--green);
+            border-radius: 50%;
+            opacity: .5;
+
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transition: .3s ease;
+        }
+
+        input[type="checkbox"]:checked::before {
+            height: 130%;
+            width: 130%;
+            opacity: 100%;
+        }
+
+        input[type="checkbox"]:checked::after {
+            opacity: 100%;
+        }
+
+        span {
+            font-size: 2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+
+        <label class="cont">
+            <input type="checkbox">
+            <!-- <span>opc 1 </span> -->
+        </label>
+
+    </main>
+
+</body>
+
+</html>
