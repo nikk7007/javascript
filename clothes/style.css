@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --c1:#f7f5f8 ;
+  --c2: #28666f;
+  --c3: #272826;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--c1);
+
+  display: flex; 
+  flex-direction: column;
+
+}
+
+header {
+  padding: 2rem;
+
+  flex-grow: 0;
+
+  text-align: center;
+  background-color: var(--c3);
+  color: var(--c1);
+  font-weight: 400;
+}
+
+main {
+  
+  flex-grow: 1;
+
+
+  display: flex;
+
+  background-color: var(--c3);
+}
+main section {
+  width: 50%;
+}
+
+section:nth-child(1){
+  padding: 3rem;
+
+  display: grid;
+  place-items: center;
+}
+
+form {
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  color: var(--c1);
+
+  border-radius: 57px;
+background: #272826;
+box-shadow:  34px 34px 68px #1f201e,
+             -34px -34px 68px #2f302e;
+}
+
+form input {
+  display: none;
+  
+} 
+
+form label {
+  padding: 1rem 2rem;
+
+  cursor: pointer;
+  border-radius: 1rem;
+  background-color: #111;
+}
+
+section:nth-child(2) {
+  padding: 3rem;
+  padding-bottom: 0;
+  background-color: var(--c1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+section:nth-child(2) .peca {
+  aspect-ratio: 1/1;
+  width: 8rem;
+  max-width: 70%;
+
+  background-color: #000;
+}
+
+
+span {
+  padding: .5rem;
+  display: block;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-color: var(--c3);
+  color: var(--c1);
+}
+
+dialog {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  inset: 50%;
+  translate: -50% -50%;
+  user-select: none;
+}
+
+dialog::backdrop {
+  background: rgba(94, 94, 94, 0.05);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@media screen and (max-width: 651px) {
+  main {
+    flex-direction: column;
+  }
+
+  main section {
+    padding: 3rem;
+    width: 100%;
+  } 
+
+  section:nth-child(2) {
+    padding-bottom: 3rem;
+  }
+
+
+}
